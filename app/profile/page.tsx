@@ -214,18 +214,18 @@ export default function ProfilePage() {
               <TabsList className="grid w-full grid-cols-2">
                 <TabsTrigger value="profile" className="flex items-center space-x-2">
                   <User className="h-4 w-4" />
-                  <span>Profil</span>
+                  <span>Personal account</span>
                 </TabsTrigger>
                 <TabsTrigger value="password" className="flex items-center space-x-2">
                   <Lock className="h-4 w-4" />
-                  <span>Parol</span>
+                  <span>Password</span>
                 </TabsTrigger>
               </TabsList>
 
               <TabsContent value="profile">
                 <Card>
                   <CardHeader>
-                    <CardTitle>Profil ma'lumotlari</CardTitle>
+                    <CardTitle>Profile information</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <form onSubmit={handleProfileUpdate} className="space-y-6">
@@ -263,13 +263,11 @@ export default function ProfilePage() {
                             {uploadingAvatar ? (
                               <>
                                 <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-primary mr-2" />
-                                Yuklanmoqda...
-                              </>
+Loading...                              </>
                             ) : (
                               <>
                                 <Camera className="h-4 w-4 mr-2" />
-                                Rasm yuklash
-                              </>
+Upload image                              </>
                             )}
                           </Button>
 
@@ -283,13 +281,12 @@ export default function ProfilePage() {
                         </div>
 
                         <p className="text-xs text-muted-foreground text-center">
-                          JPG, PNG yoki GIF. Maksimal hajm 5MB.
-                        </p>
+JPG, PNG or GIF. Maximum size 5MB.                        </p>
                       </div>
 
                       {/* Avatar URL Input */}
                       <div className="space-y-2">
-                        <Label htmlFor="avatar">Avatar URL (ixtiyoriy)</Label>
+                        <Label htmlFor="avatar">Avatar URL (optional)</Label>
                         <div className="flex space-x-2">
                           <Input
                             id="avatar"
@@ -311,7 +308,7 @@ export default function ProfilePage() {
                       </div>
 
                       <div className="space-y-2">
-                        <Label htmlFor="name">To'liq ism</Label>
+                        <Label htmlFor="name">First name, last name</Label>
                         <Input
                           id="name"
                           value={profileData.name}
@@ -335,7 +332,7 @@ export default function ProfilePage() {
                         <Label htmlFor="bio">Bio</Label>
                         <Textarea
                           id="bio"
-                          placeholder="O'zingiz haqingizda..."
+                          placeholder="About yourself..."
                           value={profileData.bio}
                           onChange={(e) => setProfileData((prev) => ({ ...prev, bio: e.target.value }))}
                           rows={4}
@@ -344,7 +341,7 @@ export default function ProfilePage() {
 
                       <Button type="submit" disabled={loading} className="w-full">
                         <Save className="h-4 w-4 mr-2" />
-                        {loading ? "Saqlanmoqda..." : "O'zgarishlarni saqlash"}
+                        {loading ? "Saving..." : "Save changes"}
                       </Button>
                     </form>
                   </CardContent>
@@ -354,12 +351,12 @@ export default function ProfilePage() {
               <TabsContent value="password">
                 <Card>
                   <CardHeader>
-                    <CardTitle>Parolni o'zgartirish</CardTitle>
+                    <CardTitle>Change Password</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <form onSubmit={handlePasswordChange} className="space-y-4">
                       <div className="space-y-2">
-                        <Label htmlFor="currentPassword">Joriy parol</Label>
+                        <Label htmlFor="currentPassword">Current Password</Label>
                         <Input
                           id="currentPassword"
                           type="password"
@@ -370,7 +367,7 @@ export default function ProfilePage() {
                       </div>
 
                       <div className="space-y-2">
-                        <Label htmlFor="newPassword">Yangi parol</Label>
+                        <Label htmlFor="newPassword">New Password</Label>
                         <Input
                           id="newPassword"
                           type="password"
@@ -379,11 +376,11 @@ export default function ProfilePage() {
                           required
                           minLength={6}
                         />
-                        <p className="text-xs text-muted-foreground">Kamida 6 ta belgi bo'lishi kerak</p>
+                        <p className="text-xs text-muted-foreground">Must be at least 6 characters long</p>
                       </div>
 
                       <div className="space-y-2">
-                        <Label htmlFor="confirmPassword">Yangi parolni tasdiqlang</Label>
+                        <Label htmlFor="confirmPassword">Confirm new password</Label>
                         <Input
                           id="confirmPassword"
                           type="password"
@@ -396,7 +393,7 @@ export default function ProfilePage() {
 
                       <Button type="submit" disabled={loading} className="w-full">
                         <Lock className="h-4 w-4 mr-2" />
-                        {loading ? "O'zgartirilmoqda..." : "Parolni o'zgartirish"}
+                        {loading ? "Being changed..." : "Change password"}
                       </Button>
                     </form>
                   </CardContent>

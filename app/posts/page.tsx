@@ -245,23 +245,17 @@ export default function PostsPage() {
         {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
-            Barcha Postlar
+            All posts by IT Creators
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Dasturchilar tomonidan yozilgan barcha maqolalar. Qidirish va filtrlash orqali kerakli maqolani toping.
-          </p>
+All articles written by developers. Find the article you need by searching and filtering.          </p>
         </div>
 
         {useMockData && (
           <div className="bg-yellow-500/10 border border-yellow-500/30 text-yellow-700 dark:text-yellow-400 p-4 rounded-lg mb-6 flex items-center justify-between">
             <div className="flex items-center">
               <AlertTriangle className="h-5 w-5 mr-2" />
-              <span>Demo rejim - namunali ma'lumotlar ko'rsatilmoqda</span>
             </div>
-            <Button size="sm" variant="outline" onClick={fetchArticles}>
-              <RefreshCw className="h-3 w-3 mr-1" />
-              Haqiqiy ma'lumotlarni yuklash
-            </Button>
           </div>
         )}
 
@@ -270,7 +264,7 @@ export default function PostsPage() {
           <CardHeader>
             <CardTitle className="flex items-center space-x-2">
               <Filter className="h-5 w-5" />
-              <span>Qidirish va Filtrlash</span>
+              <span>Search and Filter</span>
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
@@ -278,7 +272,7 @@ export default function PostsPage() {
             <div className="relative">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <Input
-                placeholder="Maqola, muallif yoki mazmun bo'yicha qidiring..."
+                placeholder="Search by article, author, or content..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="pl-10"
@@ -290,12 +284,12 @@ export default function PostsPage() {
               {/* Category Filter */}
               <Select value={selectedCategory} onValueChange={setSelectedCategory}>
                 <SelectTrigger>
-                  <SelectValue placeholder="Kategoriya" />
+                  <SelectValue placeholder="Category" />
                 </SelectTrigger>
                 <SelectContent>
                   {CATEGORIES.map((category) => (
                     <SelectItem key={category} value={category}>
-                      {category === "All" ? "Barcha kategoriyalar" : category}
+                      {category === "All" ? "All categories" : category}
                     </SelectItem>
                   ))}
                 </SelectContent>
@@ -304,13 +298,13 @@ export default function PostsPage() {
               {/* Sort Filter */}
               <Select value={sortBy} onValueChange={setSortBy}>
                 <SelectTrigger>
-                  <SelectValue placeholder="Saralash" />
+                  <SelectValue placeholder="Sort" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="newest">Eng yangi</SelectItem>
-                  <SelectItem value="oldest">Eng eski</SelectItem>
-                  <SelectItem value="popular">Eng mashhur</SelectItem>
-                  <SelectItem value="title">Alifbo bo'yicha</SelectItem>
+                  <SelectItem value="newest">Newest</SelectItem>
+                  <SelectItem value="oldest">Oldest</SelectItem>
+                  <SelectItem value="popular">Most popular</SelectItem>
+                  <SelectItem value="title">Alphabetically</SelectItem>
                 </SelectContent>
               </Select>
 
@@ -339,7 +333,7 @@ export default function PostsPage() {
               {/* Results Info */}
               <div className="flex items-center justify-center">
                 <Badge variant="secondary" className="text-sm">
-                  {filteredArticles.length} ta natija
+                  {filteredArticles.length} results
                 </Badge>
               </div>
             </div>
@@ -357,11 +351,9 @@ export default function PostsPage() {
             <div className="space-x-2">
               <Button onClick={fetchArticles}>
                 <RefreshCw className="h-4 w-4 mr-2" />
-                Qayta urinish
+                Retry
               </Button>
-              <Button variant="outline" onClick={handleUseMockData}>
-                Demo ma'lumotlarni yuklash
-              </Button>
+ 
             </div>
           </div>
         ) : (
@@ -378,9 +370,9 @@ export default function PostsPage() {
             ) : (
               <div className="text-center py-12">
                 <Search className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-                <h3 className="text-lg font-semibold mb-2">Hech narsa topilmadi</h3>
+                <h3 className="text-lg font-semibold mb-2">Nothing found</h3>
                 <p className="text-muted-foreground mb-4">
-                  Qidiruv so'zingizni o'zgartiring yoki boshqa kategoriyani tanlang.
+                  Change your search term or select a different category.
                 </p>
                 <Button
                   variant="outline"
@@ -389,7 +381,7 @@ export default function PostsPage() {
                     setSelectedCategory("All")
                   }}
                 >
-                  Filtrlarni tozalash
+                  Cleaning filters
                 </Button>
               </div>
             )}
@@ -400,8 +392,8 @@ export default function PostsPage() {
             {/* Stats */}
             {filteredArticles.length > 0 && (
               <div className="text-center mt-8 text-sm text-muted-foreground">
-                {startIndex + 1}-{Math.min(endIndex, filteredArticles.length)} / {filteredArticles.length} ta maqola
-                ko'rsatilmoqda
+                {startIndex + 1}-{Math.min(endIndex, filteredArticles.length)} / {filteredArticles.length} articles
+are displayed
               </div>
             )}
           </>

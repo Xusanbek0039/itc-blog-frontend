@@ -176,7 +176,7 @@ export default function EditPostPage() {
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="space-y-2">
-                  <Label htmlFor="title">Sarlavha</Label>
+                  <Label htmlFor="title">Title</Label>
                   <Input
                     id="title"
                     placeholder="Maqola sarlavhasini kiriting..."

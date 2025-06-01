@@ -47,18 +47,18 @@ export default function CreatePostPage() {
 
     // Title validation - backend: minlength: 5, maxlength: 200
     if (!title.trim()) {
-      errors.title = "Sarlavha kiritish majburiy"
+      errors.title = "Title entry is required."
     } else if (title.trim().length < 5) {
-      errors.title = "Sarlavha kamida 5 ta belgidan iborat bo'lishi kerak"
+      errors.title = "The title must be at least 5 characters long."
     } else if (title.trim().length > 200) {
-      errors.title = "Sarlavha 200 ta belgidan oshmasligi kerak"
+      errors.title = "The title should not exceed 200 characters."
     }
 
     // Content validation - backend: minlength: 50
     if (!content.trim()) {
-      errors.content = "Maqola matni kiritish majburiy"
+      errors.content = "Article text entry is required."
     } else if (content.trim().length < 50) {
-      errors.content = "Maqola matni kamida 50 ta belgidan iborat bo'lishi kerak"
+      errors.content = "The article text must be at least 50 characters long."
     }
 
     // Category validation - backend: required, enum
@@ -68,7 +68,7 @@ export default function CreatePostPage() {
 
     // URL validation
     if (image && !image.match(/^(http|https):\/\/[^ "]+$/)) {
-      errors.image = "Rasm URL manzili noto'g'ri formatda"
+      errors.image = "Image URL is in invalid format"
     }
 
     setValidationErrors(errors)
@@ -81,8 +81,8 @@ export default function CreatePostPage() {
     // Formani tekshirish
     if (!validateForm()) {
       toast({
-        title: "Xatolik!",
-        description: "Forma ma'lumotlarini to'g'ri to'ldiring",
+        title: "Error!",
+        description: "Fill out the form information correctly.",
         variant: "destructive",
       })
       return
@@ -169,7 +169,7 @@ export default function CreatePostPage() {
             <CardHeader>
               <CardTitle className="flex items-center space-x-2">
                 <PlusCircle className="h-6 w-6" />
-                <span>Yangi maqola yaratish</span>
+                <span>Create a new article</span>
               </CardTitle>
             </CardHeader>
 
@@ -177,28 +177,28 @@ export default function CreatePostPage() {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="space-y-2">
                   <Label htmlFor="title" className={validationErrors.title ? "text-destructive" : ""}>
-                    Sarlavha {validationErrors.title && <span className="text-destructive">*</span>}
+                    Title {validationErrors.title && <span className="text-destructive">*</span>}
                   </Label>
                   <Input
                     id="title"
-                    placeholder="Maqola sarlavhasini kiriting..."
+                    placeholder="Enter article title..."
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
                     className={validationErrors.title ? "border-destructive" : ""}
                     maxLength={200}
                   />
                   {validationErrors.title && <p className="text-sm text-destructive">{validationErrors.title}</p>}
-                  <p className="text-xs text-muted-foreground">{title.length}/200 belgi</p>
+                  <p className="text-xs text-muted-foreground">{title.length}/200 sign</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label htmlFor="category" className={validationErrors.category ? "text-destructive" : ""}>
-                      Kategoriya
+                      Category
                     </Label>
                     <Select value={category} onValueChange={setCategory}>
                       <SelectTrigger className={validationErrors.category ? "border-destructive" : ""}>
-                        <SelectValue placeholder="Kategoriya tanlang" />
+                        <SelectValue placeholder="Select a category" />
                       </SelectTrigger>
                       <SelectContent>
                         {VALID_CATEGORIES.map((cat) => (
@@ -211,12 +211,12 @@ export default function CreatePostPage() {
                     {validationErrors.category && (
                       <p className="text-sm text-destructive">{validationErrors.category}</p>
                     )}
-                    <p className="text-xs text-muted-foreground">Default: "Umumiy" kategoriyasi ishlatiladi</p>
+                    <p className="text-xs text-muted-foreground">Default: "General" category is used</p>
                   </div>
 
                   <div className="space-y-2">
                     <Label htmlFor="image" className={validationErrors.image ? "text-destructive" : ""}>
-                      Rasm URL (ixtiyoriy)
+                      Image URL (optional)
                     </Label>
                     <Input
                       id="image"
@@ -232,20 +232,20 @@ export default function CreatePostPage() {
 
                 <div className="space-y-2">
                   <Label htmlFor="content" className={validationErrors.content ? "text-destructive" : ""}>
-                    Maqola matni {validationErrors.content && <span className="text-destructive">*</span>}
+                    Article text {validationErrors.content && <span className="text-destructive">*</span>}
                   </Label>
                   <Textarea
                     id="content"
-                    placeholder="Maqola matnini shu yerga yozing..."
+                    placeholder="Write the text of the article here..."
                     value={content}
                     onChange={(e) => setContent(e.target.value)}
                     rows={15}
                     className={`font-mono ${validationErrors.content ? "border-destructive" : ""}`}
                   />
                   {validationErrors.content && <p className="text-sm text-destructive">{validationErrors.content}</p>}
-                  <p className="text-sm text-muted-foreground">{content.length} belgi (kamida 50 ta kerak)</p>
+                  <p className="text-sm text-muted-foreground">{content.length} sign (at least 50 are needed)</p>
                   <p className="text-sm text-muted-foreground">
-                    Markdown formatini ishlatishingiz mumkin. Masalan: **qalin matn**, *kursiv*, `kod`
+                    You can use Markdown formatting. For example: **bold text**, *italics*, `code`
                   </p>
                 </div>
 
@@ -253,12 +253,12 @@ export default function CreatePostPage() {
                   <div className="flex items-start space-x-2">
                     <AlertTriangle className="h-5 w-5 text-amber-500 mt-0.5" />
                     <div className="text-sm">
-                      <p className="font-medium">Backend validatsiya qoidalari:</p>
+                      <p className="font-medium">Rules that should be mandatory:</p>
                       <ul className="list-disc list-inside space-y-1 mt-1 text-muted-foreground">
-                        <li>Sarlavha: 5-200 belgi oralig'ida bo'lishi kerak</li>
-                        <li>Maqola matni: kamida 50 ta belgi bo'lishi kerak</li>
-                        <li>Kategoriya: majburiy maydon (11 ta variant)</li>
-                        <li>Rasm URL: ixtiyoriy, lekin to'g'ri format bo'lishi kerak</li>
+<li>Title: Must be between 5-200 characters</li>
+<li>Article text: Must be at least 50 characters</li>
+<li>Category: Required field (11 options)</li>
+<li>Image URL: Optional, but must be in the correct format</li>
                       </ul>
                     </div>
                   </div>
@@ -266,10 +266,10 @@ export default function CreatePostPage() {
 
                 <div className="flex justify-end space-x-4">
                   <Button type="button" variant="outline" onClick={() => router.back()}>
-                    Bekor qilish
+                    Delete all and cancel
                   </Button>
                   <Button type="submit" disabled={loading}>
-                    {loading ? "Nashr qilinmoqda..." : "Maqolani nashr qilish"}
+                    {loading ? "Publishing..." : "Publish"}
                   </Button>
                 </div>
               </form>

@@ -271,7 +271,7 @@ export default function HomePage() {
 
         {displayArticles.length === 0 && (
           <div className="text-center py-12">
-            <p className="text-muted-foreground text-lg">Hozircha maqolalar yo'q. Birinchi bo'lib maqola yozing!</p>
+            <p className="text-muted-foreground text-lg">There are no articles yet. Be the first to write an article!</p>
           </div>
         )}
       </>
@@ -288,8 +288,7 @@ export default function HomePage() {
             Welcome to ITC Blog
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Dasturchilar jamiyati - bilim almashish va ajoyib loyihalar yaratish platformasi.
-          </p>
+The Developer Community is a platform for sharing knowledge and creating amazing projects.          </p>
         </div>
 
         {renderContent()}
