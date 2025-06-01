@@ -34,25 +34,25 @@ export default function RegisterPage() {
     const newErrors: { [key: string]: string } = {}
 
     if (!name.trim()) {
-      newErrors.name = "Ism kiritish majburiy"
+      newErrors.name = "Name entry is required."
     } else if (name.trim().length < 2) {
-      newErrors.name = "Ism kamida 2 ta belgidan iborat bo'lishi kerak"
+      newErrors.name = "The name must be at least 2 characters long."
     }
 
     if (!email.trim()) {
-      newErrors.email = "Email kiritish majburiy"
+      newErrors.email = "Email is required."
     } else if (!/\S+@\S+\.\S+/.test(email)) {
-      newErrors.email = "Email formati noto'g'ri"
+      newErrors.email = "Email format is incorrect."
     }
 
     if (!password) {
-      newErrors.password = "Parol kiritish majburiy"
+      newErrors.password = "Password entry is required."
     } else if (password.length < 6) {
-      newErrors.password = "Parol kamida 6 ta belgidan iborat bo'lishi kerak"
+      newErrors.password = "Password must be at least 6 characters long"
     }
 
     if (password !== confirmPassword) {
-      newErrors.confirmPassword = "Parollar mos kelmaydi"
+      newErrors.confirmPassword = "Passwords do not match."
     }
 
     if (Object.keys(newErrors).length > 0) {
@@ -136,7 +136,7 @@ export default function RegisterPage() {
                 <Input
                   id="name"
                   type="text"
-                  placeholder="Ism Familiya"
+                  placeholder="First Name Last Name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   className={errors.name ? "border-red-500" : ""}
@@ -205,9 +205,9 @@ export default function RegisterPage() {
               </Button>
 
               <p className="text-sm text-center text-muted-foreground">
-                Hisobingiz bormi?{" "}
+                Do you have an account?{" "}
                 <Link href="/login" className="text-primary hover:underline">
-                  Kirish
+                  Sign in
                 </Link>
               </p>
             </CardFooter>

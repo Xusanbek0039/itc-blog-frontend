@@ -198,25 +198,14 @@ export default function WorksPage() {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8">
-            <Badge variant="outline" className="mb-2">
-              Demo ma'lumotlar
-            </Badge>
-            <p className="text-muted-foreground">
-              Bu sahifada namunali loyihalar ko'rsatilmoqda. API endpointi mavjud bo'lmagani uchun demo ma'lumotlar
-              ishlatilmoqda.
-            </p>
+
+
           </div>
 
           {useMockData && (
-            <div className="bg-yellow-500/10 border border-yellow-500/30 text-yellow-700 dark:text-yellow-400 p-4 rounded-lg mb-8 flex items-center justify-between">
-              <div className="flex items-center">
-                <AlertTriangle className="h-5 w-5 mr-2" />
-                <span>Demo rejim - namunali loyihalar ko'rsatilmoqda</span>
-              </div>
-              <Button size="sm" variant="outline" onClick={handleRetry}>
-                <RefreshCw className="h-3 w-3 mr-1" />
-                Haqiqiy ma'lumotlarni yuklash
-              </Button>
+            <div>
+
+
             </div>
           )}
 

@@ -28,6 +28,7 @@ import {
   Users,
   Mail,
   Briefcase,
+  Send,
 } from "lucide-react"
 
 export function Navbar() {
@@ -53,19 +54,19 @@ export function Navbar() {
     },
     {
       href: "/works",
-      label: "Qilingan ishlar",
+      label: "Work done",
       icon: Briefcase,
       show: true,
     },
     {
       href: "/team",
-      label: "Jamoa",
+      label: "Team",
       icon: Users,
       show: true,
     },
     {
       href: "/contact",
-      label: "Bog'lanish",
+      label: "Connection",
       icon: Mail,
       show: true,
     },
@@ -104,7 +105,7 @@ export function Navbar() {
     },
     {
       href: "https://t.me/it_creative_news",
-      icon: MessageCircle,
+      icon: Send,
       label: "Telegram",
       color: "text-blue-500 hover:text-blue-600",
     },
@@ -294,7 +295,7 @@ export function Navbar() {
 
                       {/* Social Links */}
                       <div className="mt-8 pt-6 border-t">
-                        <p className="text-sm font-semibold text-muted-foreground mb-4 px-4">Ijtimoiy tarmoqlar</p>
+                        <p className="text-sm font-semibold text-muted-foreground mb-4 px-4">Social networks</p>
                         <div className="space-y-2">
                           {socialLinks.map((link) => (
                             <a
