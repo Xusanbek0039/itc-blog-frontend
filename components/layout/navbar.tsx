@@ -75,18 +75,18 @@ export function Navbar() {
       icon: PlusCircle,
       show: !!user,
     },
-    {
-      href: "/my-posts",
-      label: "My Posts",
-      icon: FileText,
-      show: !!user,
-    },
-    {
-      href: "/portfolio",
-      label: "Portfolio",
-      icon: Code,
-      show: !!user,
-    },
+    // {
+    //   href: "/my-posts",
+    //   label: "My Posts",
+    //   icon: FileText,
+    //   show: !!user,
+    // },
+    // {
+    //   href: "/portfolio",
+    //   label: "Portfolio",
+    //   icon: Code,
+    //   show: !!user,
+    // },
     {
       href: "/profile",
       label: "Profile",
@@ -103,7 +103,7 @@ export function Navbar() {
       color: "text-red-500 hover:text-red-600",
     },
     {
-      href: "https://t.me/itcreative_uz",
+      href: "https://t.me/it_creative_news",
       icon: MessageCircle,
       label: "Telegram",
       color: "text-blue-500 hover:text-blue-600",
@@ -185,7 +185,6 @@ export function Navbar() {
               <div className="flex items-center space-x-3">
                 <div className="hidden xl:flex items-center space-x-2">
                   <Avatar className="h-8 w-8">
-                    <AvatarImage src={user.avatar || "/placeholder.svg"} />
                     <AvatarFallback className="bg-primary text-primary-foreground text-sm">
                       {user.name.charAt(0).toUpperCase()}
                     </AvatarFallback>

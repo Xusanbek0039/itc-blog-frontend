@@ -65,14 +65,14 @@ export default function RegisterPage() {
     try {
       await register(name, email, password) // 'name' yuboramiz
       toast({
-        title: "Muvaffaqiyat!",
-        description: "Hisob muvaffaqiyatli yaratildi! Xush kelibsiz!",
+        title: "Success!",
+        description: "Account created successfully! Welcome!!",
       })
       router.push("/")
     } catch (error: any) {
       console.error("Registration error:", error)
 
-      let errorMessage = "Ro'yxatdan o'tishda xatolik yuz berdi"
+      let errorMessage = "An error occurred while registering."
 
       if (error.response?.status === 400) {
         const backendError = error.response?.data?.message || error.response?.data?.error
@@ -81,28 +81,28 @@ export default function RegisterPage() {
         if (backendError) {
           if (typeof backendError === "string") {
             if (backendError.toLowerCase().includes("email")) {
-              errorMessage = "Bu email allaqachon ro'yxatdan o'tgan"
+              errorMessage = "This email is already registered."
             } else if (backendError.toLowerCase().includes("mavjud")) {
-              errorMessage = "Foydalanuvchi allaqachon mavjud"
+              errorMessage = "User already exists."
             } else if (
               backendError.toLowerCase().includes("validation") ||
               backendError.toLowerCase().includes("required") ||
               backendError.toLowerCase().includes("to'ldirilishi")
             ) {
-              errorMessage = "Barcha maydonlarni to'ldiring"
+              errorMessage = "Fill in all fields."
             } else {
               errorMessage = backendError
             }
           } else {
-            errorMessage = "Ma'lumotlar noto'g'ri kiritilgan"
+            errorMessage = "The information was entered incorrectly."
           }
         }
       } else if (error.response?.status === 422) {
-        errorMessage = "Ma'lumotlar formati noto'g'ri"
+        errorMessage = "The data format is incorrect."
       } else if (error.response?.status === 500) {
-        errorMessage = "Server xatoligi. Iltimos, keyinroq urinib ko'ring"
+        errorMessage = "Server error. Please try again later."
       } else if (!error.response) {
-        errorMessage = "Internet aloqasi yo'q. Iltimos, internetni tekshiring"
+        errorMessage = "No internet connection. Please check your internet connection."
       }
 
       toast({
@@ -125,14 +125,14 @@ export default function RegisterPage() {
             <div className="flex justify-center mb-4">
               <Terminal className="h-12 w-12 text-primary" />
             </div>
-            <CardTitle className="text-2xl">Jamiyatga qo'shiling</CardTitle>
-            <CardDescription>Dasturchi hisobingizni yarating</CardDescription>
+            <CardTitle className="text-2xl">Create a secure account</CardTitle>
+            <CardDescription>Enter personal information and register.</CardDescription>
           </CardHeader>
 
           <form onSubmit={handleSubmit}>
             <CardContent className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="name">To'liq ism</Label>
+                <Label htmlFor="name">First name, last name</Label>
                 <Input
                   id="name"
                   type="text"
@@ -146,7 +146,7 @@ export default function RegisterPage() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
+                <Label htmlFor="email">You Email</Label>
                 <Input
                   id="email"
                   type="email"
@@ -160,7 +160,7 @@ export default function RegisterPage() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="password">Parol</Label>
+                <Label htmlFor="password">Password</Label>
                 <div className="relative">
                   <Input
                     id="password"
@@ -185,7 +185,7 @@ export default function RegisterPage() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="confirmPassword">Parolni tasdiqlang</Label>
+                <Label htmlFor="confirmPassword">Confirm Password</Label>
                 <Input
                   id="confirmPassword"
                   type="password"
@@ -201,7 +201,7 @@ export default function RegisterPage() {
 
             <CardFooter className="flex flex-col space-y-4">
               <Button type="submit" className="w-full" disabled={loading}>
-                {loading ? "Hisob yaratilmoqda..." : "Hisob yaratish"}
+                {loading ? "Creating, please wait......" : "Create Account"}
               </Button>
 
               <p className="text-sm text-center text-muted-foreground">

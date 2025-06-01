@@ -91,8 +91,8 @@ export default function LoginPage() {
             <div className="flex justify-center mb-4">
               <Terminal className="h-12 w-12 text-primary" />
             </div>
-            <CardTitle className="text-2xl">Xush kelibsiz</CardTitle>
-            <CardDescription>Hisobingizga kiring</CardDescription>
+            <CardTitle className="text-2xl">IT Creative</CardTitle>
+            <CardDescription>Fill in your details to log in.</CardDescription>
           </CardHeader>
 
           {serverError && (
@@ -100,9 +100,6 @@ export default function LoginPage() {
               <AlertTriangle className="h-5 w-5 text-destructive mr-2 mt-0.5 flex-shrink-0" />
               <div className="space-y-2">
                 <p className="text-sm font-medium text-destructive">{serverError}</p>
-                <Button size="sm" variant="outline" onClick={handleUseDemoMode}>
-                  Demo rejimda davom etish
-                </Button>
               </div>
             </div>
           )}
@@ -110,7 +107,7 @@ export default function LoginPage() {
           <form onSubmit={handleSubmit}>
             <CardContent className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
+                <Label htmlFor="email">You Email</Label>
                 <Input
                   id="email"
                   type="email"
@@ -124,7 +121,7 @@ export default function LoginPage() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="password">Parol</Label>
+                <Label htmlFor="password">Password</Label>
                 <div className="relative">
                   <Input
                     id="password"
@@ -159,13 +156,11 @@ export default function LoginPage() {
                   <span className="w-full border-t" />
                 </div>
                 <div className="relative flex justify-center text-xs uppercase">
-                  <span className="bg-background px-2 text-muted-foreground">Yoki</span>
+                  <span className="bg-background px-2 text-muted-foreground">Or</span>
                 </div>
               </div>
 
-              <Button type="button" variant="outline" className="w-full" onClick={handleUseDemoMode}>
-                Demo rejimda davom etish
-              </Button>
+
 
               <p className="text-sm text-center text-muted-foreground">
                 Don't have an account?{" "}

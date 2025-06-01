@@ -15,7 +15,7 @@ export function Loading() {
             <span className="typing-animation">Loading...</span>
             <span className="terminal-cursor">_</span>
           </div>
-          <p className="text-sm text-muted-foreground">Ma'lumotlar yuklanmoqda</p>
+          <p className="text-sm text-muted-foreground">Loading data</p>
         </div>
       </div>
     </div>
