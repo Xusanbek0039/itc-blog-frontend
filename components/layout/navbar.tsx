@@ -76,12 +76,12 @@ export function Navbar() {
       icon: PlusCircle,
       show: !!user,
     },
-    // {
-    //   href: "/my-posts",
-    //   label: "My Posts",
-    //   icon: FileText,
-    //   show: !!user,
-    // },
+    {
+      href: "/my-posts",
+      label: "My Posts",
+      icon: FileText,
+      show: !!user,
+    },
     // {
     //   href: "/portfolio",
     //   label: "Portfolio",
