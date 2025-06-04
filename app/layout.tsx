@@ -11,13 +11,46 @@ import { NetworkStatus } from "@/components/ui/network-status";
 const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "ITC Blog - Developer Community",
-  description: "Dasturchilar uchun bilim almashish platformasi",
+  title: "ITC Blog - Dasturchilar hamjamiyati",
+  description: "ITC Blog — bu dasturchilar va IT mutaxassislari uchun bilim almashish, maqolalar yozish va tajriba ulashish platformasi.",
+  keywords: ["dasturlash", "blog", "dasturchilar", "IT", "maqola", "frontend", "backend", "itc-blog.uz"],
+  authors: [{ name: "ITC Team", url: "https://itc-blog.uz" }],
+  creator: "ITC Blog",
+  publisher: "ITC Blog",
+  metadataBase: new URL("https://itc-blog.uz"),
   generator: "v0.dev",
+
+  // Faviconlar
   icons: {
-    icon: "/favicon.ico", // favicon yo‘li (public papkadan)
+    icon: "/favicon.ico",
     shortcut: "/favicon.ico",
     apple: "/favicon.ico",
+  },
+
+  // Open Graph (Facebook, Telegram va boshqalar uchun)
+  openGraph: {
+    type: "website",
+    url: "https://itc-blog.uz",
+    title: "ITC Blog - Dasturchilar hamjamiyati",
+    description: "Dasturchilar uchun bilim almashish va maqola yozish platformasi.",
+    siteName: "ITC Blog",
+    images: [
+      {
+        url: "/itc-blog.png",
+        width: 1200,
+        height: 630,
+        alt: "ITC Blog - Dasturchilar hamjamiyati",
+      },
+    ],
+  },
+
+  // Twitter Card
+  twitter: {
+    card: "summary_large_image",
+    site: "@itc_blog", // Twitter akkauntingiz bo‘lsa qo‘shing
+    title: "ITC Blog - Dasturchilar hamjamiyati",
+    description: "Bilim almashish va maqola yozish uchun zamonaviy platforma.",
+    images: ["/itc-blog.png"],
   },
 };
 
