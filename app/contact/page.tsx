@@ -43,8 +43,8 @@ export default function ContactPage() {
       await new Promise((resolve) => setTimeout(resolve, 1000))
 
       toast({
-        title: "Xabar yuborildi!",
-        description: "Tez orada siz bilan bog'lanamiz. Rahmat!",
+        title: "Message sent!",
+        description: "We will contact you soon. Thank you!",
       })
 
       // Reset form
@@ -56,8 +56,8 @@ export default function ContactPage() {
       })
     } catch (error) {
       toast({
-        title: "Xatolik!",
-        description: "Xabar yuborishda xatolik yuz berdi. Qayta urinib ko'ring.",
+        title: "Error!",
+        description: "There was an error sending the message. Please try again.",
         variant: "destructive",
       })
     } finally {
@@ -70,31 +70,31 @@ export default function ContactPage() {
       icon: Mail,
       title: "Email",
       value: "info@itcreative.uz",
-      description: "Bizga email yuboring",
+      description: "Send us an email",
       color: "from-blue-500 to-cyan-500",
       link: "mailto:info@itcreative.uz",
     },
     {
       icon: Phone,
-      title: "Telefon",
-      value: "+998 90 123 45 67",
-      description: "Bizga qo'ng'iroq qiling",
+      title: "Phone",
+      value: "+998 97 521 66 86",
+      description: "Call us",
       color: "from-green-500 to-teal-500",
-      link: "tel:+998901234567",
+      link: "tel:+998975216686",
     },
     {
       icon: MapPin,
-      title: "Manzil",
-      value: "Toshkent, O'zbekiston",
-      description: "Bizning ofisimiz",
+      title: "Address",
+      value: "O'zbekiston, Djizzax",
+      description: "Our office",
       color: "from-purple-500 to-pink-500",
-      link: "https://maps.google.com",
+      link: "https://yandex.uz/maps/org/11923430521/?ll=68.399011%2C39.963959&z=17",
     },
     {
       icon: Clock,
-      title: "Ish vaqti",
-      value: "Dush-Juma: 9:00-18:00",
-      description: "Bizning ish soatlari",
+      title: "Working hours",
+      value: "Mon-Fri: 9:00-18:00",
+      description: "Our business hours",
       color: "from-orange-500 to-red-500",
       link: null,
     },
@@ -104,30 +104,30 @@ export default function ContactPage() {
     {
       icon: MessageCircle,
       name: "Telegram",
-      url: "https://t.me/itcreative_uz",
+      url: "https://t.me/it_creative_news",
       color: "bg-blue-500 hover:bg-blue-600",
-      description: "Telegram kanalimiz",
+      description: "Our Telegram channel",
     },
     {
       icon: Youtube,
       name: "YouTube",
       url: "https://youtube.com/@it_creative",
       color: "bg-red-500 hover:bg-red-600",
-      description: "Video darslar",
+      description: "Video lessons",
     },
     {
       icon: Instagram,
       name: "Instagram",
-      url: "https://instagram.com/itcreative_uz",
+      url: "https://instagram.com/husanbek_coder",
       color: "bg-pink-500 hover:bg-pink-600",
-      description: "Rasmlar va yangiliklar",
+      description: "Pictures and news",
     },
     {
       icon: Globe,
       name: "Website",
-      url: "https://itcreative.uz",
+      url: "https://husanbek-coder.uz",
       color: "bg-indigo-500 hover:bg-indigo-600",
-      description: "Rasmiy saytimiz",
+      description: "Our official website",
     },
   ]
 
@@ -150,11 +150,11 @@ export default function ContactPage() {
             </div>
 
             <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
-              Bog'lanish
+              Connection
             </h1>
 
             <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
-              Savollaringiz bormi? Loyiha haqida gaplashmoqchimisiz? Biz bilan bog'laning!
+              Do you have any questions? Want to talk about a project? Contact us!
             </p>
           </div>
         </div>
@@ -185,7 +185,7 @@ export default function ContactPage() {
                   {info.link && (
                     <Button asChild variant="ghost" size="sm" className="mt-4 hover:bg-primary/10 hover:text-primary">
                       <a href={info.link} target="_blank" rel="noopener noreferrer">
-                        Bog'lanish
+                        Connection
                       </a>
                     </Button>
                   )}
@@ -205,19 +205,19 @@ export default function ContactPage() {
               <CardHeader>
                 <CardTitle className="text-2xl font-bold flex items-center space-x-2">
                   <Send className="h-6 w-6 text-primary" />
-                  <span>Xabar Yuborish</span>
+                  <span>Send Message</span>
                 </CardTitle>
-                <p className="text-muted-foreground">Formani to'ldiring va biz tez orada siz bilan bog'lanamiz.</p>
+                <p className="text-muted-foreground">Fill out the form and we will contact you soon..</p>
               </CardHeader>
 
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <Label htmlFor="name">Ismingiz</Label>
+                      <Label htmlFor="name">Your name</Label>
                       <Input
                         id="name"
-                        placeholder="Ismingizni kiriting"
+                        placeholder="Husan Suyunov"
                         value={formData.name}
                         onChange={(e) => setFormData((prev) => ({ ...prev, name: e.target.value }))}
                         required
@@ -229,7 +229,7 @@ export default function ContactPage() {
                       <Input
                         id="email"
                         type="email"
-                        placeholder="email@example.com"
+                        placeholder="itpark0071@gmail.com"
                         value={formData.email}
                         onChange={(e) => setFormData((prev) => ({ ...prev, email: e.target.value }))}
                         required
@@ -238,10 +238,10 @@ export default function ContactPage() {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="subject">Mavzu</Label>
+                    <Label htmlFor="subject">Subject</Label>
                     <Input
                       id="subject"
-                      placeholder="Xabar mavzusi"
+                      placeholder="Message subject"
                       value={formData.subject}
                       onChange={(e) => setFormData((prev) => ({ ...prev, subject: e.target.value }))}
                       required
@@ -249,10 +249,10 @@ export default function ContactPage() {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="message">Xabar</Label>
+                    <Label htmlFor="message">Message</Label>
                     <Textarea
                       id="message"
-                      placeholder="Xabaringizni shu yerga yozing..."
+                      placeholder="Write your message here..."
                       rows={6}
                       value={formData.message}
                       onChange={(e) => setFormData((prev) => ({ ...prev, message: e.target.value }))}
@@ -268,12 +268,12 @@ export default function ContactPage() {
                     {loading ? (
                       <>
                         <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2" />
-                        Yuborilmoqda...
+                        Sending...
                       </>
                     ) : (
                       <>
                         <Send className="h-4 w-4 mr-2" />
-                        Xabar Yuborish
+                        Send Message
                       </>
                     )}
                   </Button>
@@ -288,9 +288,9 @@ export default function ContactPage() {
                 <CardHeader>
                   <CardTitle className="text-2xl font-bold flex items-center space-x-2">
                     <Users className="h-6 w-6 text-primary" />
-                    <span>Ijtimoiy Tarmoqlar</span>
+                    <span>Social Networks</span>
                   </CardTitle>
-                  <p className="text-muted-foreground">Bizni ijtimoiy tarmoqlarda kuzatib boring!</p>
+                  <p className="text-muted-foreground">Follow us on social media!</p>
                 </CardHeader>
 
                 <CardContent>
@@ -327,31 +327,31 @@ export default function ContactPage() {
                 <CardContent className="p-8">
                   <div className="flex items-center space-x-3 mb-4">
                     <Sparkles className="h-8 w-8 text-yellow-500" />
-                    <h3 className="text-2xl font-bold">Nima uchun biz?</h3>
+                    <h3 className="text-2xl font-bold">Why us??</h3>
                   </div>
 
                   <div className="space-y-4">
                     <div className="flex items-start space-x-3">
                       <div className="w-2 h-2 rounded-full bg-blue-500 mt-2" />
                       <div>
-                        <h4 className="font-semibold">Tez javob</h4>
-                        <p className="text-sm text-muted-foreground">24 soat ichida javob beramiz</p>
+                        <h4 className="font-semibold">Quick answer</h4>
+                        <p className="text-sm text-muted-foreground">We will respond within 24 hours.</p>
                       </div>
                     </div>
 
                     <div className="flex items-start space-x-3">
                       <div className="w-2 h-2 rounded-full bg-green-500 mt-2" />
                       <div>
-                        <h4 className="font-semibold">Professional yondashuv</h4>
-                        <p className="text-sm text-muted-foreground">Har bir loyihaga individual yondashamiz</p>
+                        <h4 className="font-semibold">Professional approach</h4>
+                        <p className="text-sm text-muted-foreground">We take an individual approach to each project.</p>
                       </div>
                     </div>
 
                     <div className="flex items-start space-x-3">
                       <div className="w-2 h-2 rounded-full bg-purple-500 mt-2" />
                       <div>
-                        <h4 className="font-semibold">Zamonaviy texnologiyalar</h4>
-                        <p className="text-sm text-muted-foreground">Eng so'nggi texnologiyalardan foydalanamiz</p>
+                        <h4 className="font-semibold">Modern technologies</h4>
+                        <p className="text-sm text-muted-foreground">We use the latest technologies</p>
                       </div>
                     </div>
                   </div>
@@ -367,9 +367,9 @@ export default function ContactPage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Bizning Joylashuvimiz
+              Our Location
             </h2>
-            <p className="text-lg text-muted-foreground">Toshkent shahrida joylashganmiz</p>
+            <p className="text-lg text-muted-foreground">Djizzax, O'zbekistan</p>
           </div>
 
           <Card className="max-w-4xl mx-auto bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm border-0 shadow-xl">
@@ -377,8 +377,8 @@ export default function ContactPage() {
               <div className="aspect-video bg-gradient-to-br from-blue-100 to-indigo-100 dark:from-slate-700 dark:to-indigo-800 rounded-lg flex items-center justify-center">
                 <div className="text-center">
                   <MapPin className="h-16 w-16 text-blue-500 mx-auto mb-4" />
-                  <h3 className="text-xl font-bold mb-2">Interaktiv Xarita</h3>
-                  <p className="text-muted-foreground">Tez orada qo'shiladi</p>
+                  <h3 className="text-xl font-bold mb-2">Interactive Map</h3>
+                  <p className="text-muted-foreground">Coming soon</p>
                 </div>
               </div>
             </CardContent>
