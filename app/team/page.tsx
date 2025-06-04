@@ -29,39 +29,39 @@ export default function TeamPage() {
   }, [])
 
   const stats = [
-    { icon: Users, label: "Jamoa a'zolari", value: "15+" },
-    { icon: Code, label: "Loyihalar", value: "50+" },
-    { icon: Star, label: "Mijozlar", value: "100+" },
-    { icon: Award, label: "Tajriba", value: "5+ yil" },
+    { icon: Users, label: "Team members", value: "15+" },
+    { icon: Code, label: "Projects", value: "50+" },
+    { icon: Star, label: "Customers", value: "100+" },
+    { icon: Award, label: "Experience", value: "5+ yil" },
   ]
 
   const socialChannels = [
     {
       id: "telegram",
-      title: "Telegram Kanalimiz",
-      description: "IT yangiliklari, foydali maslahatlar va motivatsion postlar. Har kuni yangi ma'lumotlar!",
+      title: "Telegram Chanell",
+      description: "IT news, useful tips and motivational posts. New information every day!",
       icon: MessageCircle,
       color: "from-blue-500 to-cyan-500",
-      buttonText: "Obuna bo'lish",
+      buttonText: "Subscribe",
       buttonColor: "bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600",
-      link: "https://t.me/itcreative_uz",
+      link: "https://t.me/it_creative_news",
       features: [
-        "📱 Har kunlik IT yangiliklar",
-        "💡 Foydali maslahatlar",
-        "🚀 Motivatsion kontentlar",
-        "👥 Faol jamoa",
+      "📱 Daily IT News",
+      "💡 Useful Tips",
+      "🚀 Motivational Content",
+      "👥 Active Community",
       ],
     },
     {
       id: "youtube",
-      title: "YouTube Kanalimiz",
-      description: "Video darslar, texnologik sharhlar va jonli efirlar. Professional rivojlanish uchun!",
+      title: "Our YouTube Channel",
+      description: "Video tutorials, tech reviews, and live streams. For professional development!",
       icon: Youtube,
       color: "from-red-500 to-pink-500",
-      buttonText: "Kanal ko'rish",
+      buttonText: "Channel view",
       buttonColor: "bg-gradient-to-r from-red-500 to-pink-500 hover:from-red-600 hover:to-pink-600",
       link: "https://youtube.com/@it_creative",
-      features: ["🎥 Video darslar", "🔴 Jonli efirlar", "📊 Texnologik sharhlar", "🎯 Amaliy loyihalar"],
+      features: ["🎥 Video lessons", "🔴 Live broadcasts", "📊 Technology reviews", "🎯 Practical projects"],
     },
   ]
 
@@ -69,13 +69,35 @@ export default function TeamPage() {
     {
       name: "Husan Suyunov",
       role: "Lead Developer & Founder",
-      bio: "5+ yillik tajribaga ega Full-Stack dasturchi. React, Node.js va zamonaviy texnologiyalar bo'yicha mutaxassis.",
+      bio: "Full-Stack developer with 5+ years of experience. Expert in React, Node.js, and modern technologies.",
       avatar: "https://ui-avatars.com/api/?name=Husan+Suyunov&background=6366f1&color=fff&size=200",
-      skills: ["React", "Node.js", "TypeScript", "MongoDB", "Next.js"],
-      social: {
-        telegram: "https://t.me/husansuyunov",
+      skills: [
+          "Python",
+          "Django",
+          "FastAPI",
+          "PostgreSQL",
+          "MongoDB",
+          "REST API",
+          "JWT",
+          "HTML",
+          "CSS",
+          "JavaScript",
+          "TypeScript",
+          "React",
+          "Next.js",
+          "Tailwind CSS",
+          "Git",
+          "GitHub",
+          "Docker",
+          "Linux",
+          "CI/CD",
+          "Testing (Pytest, Jest)",
+          "Node.js (asosiy tushunchalar)"
+          ],
+                social: {
+        telegram: "https://t.me/husanbek_coder",
         youtube: "https://youtube.com/@it_creative",
-        email: "husan@itcreative.uz",
+        email: "itpark0071@gmail.com",
       },
     },
   ]
@@ -103,12 +125,11 @@ export default function TeamPage() {
             </div>
 
             <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
-              IT Ijodkorlari
+              IT Creatives
             </h1>
 
             <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
-              Zamonaviy texnologiyalar va kreativ yechimlar orqali raqamli kelajakni yaratamiz
-            </p>
+We create a digital future through modern technologies and creative solutions            </p>
 
             <div className="flex flex-wrap justify-center gap-4 mb-12">
               {stats.map((stat, index) => (
@@ -137,11 +158,9 @@ export default function TeamPage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Bizning Kanallarimiz
-            </h2>
+Our Channels            </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              IT sohasidagi eng so'nggi yangiliklar va foydali ma'lumotlar uchun bizga qo'shiling
-            </p>
+Join us for the latest news and useful information in the IT industry            </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
@@ -204,11 +223,9 @@ export default function TeamPage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Bizning Jamoa
-            </h2>
+Our Team            </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Professional va tajribali mutaxassislar jamoasi
-            </p>
+Professional and experienced team of experts            </p>
           </div>
 
           <div className="max-w-4xl mx-auto">
@@ -291,11 +308,9 @@ export default function TeamPage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Bog'lanish
-            </h2>
+Connection            </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Savollaringiz bormi? Biz bilan bog'laning!
-            </p>
+Do you have any questions? Contact us!            </p>
           </div>
 
           <div className="max-w-4xl mx-auto">
@@ -307,23 +322,23 @@ export default function TeamPage() {
                       <Mail className="h-8 w-8 text-white" />
                     </div>
                     <h3 className="font-semibold mb-2">Email</h3>
-                    <p className="text-muted-foreground">info@itcreative.uz</p>
+                    <p className="text-muted-foreground">itpark0071@gmail.com</p>
                   </div>
 
                   <div className="text-center">
                     <div className="bg-gradient-to-r from-green-500 to-teal-500 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                       <Phone className="h-8 w-8 text-white" />
                     </div>
-                    <h3 className="font-semibold mb-2">Telefon</h3>
-                    <p className="text-muted-foreground">+998 90 123 45 67</p>
+                    <h3 className="font-semibold mb-2">Phone</h3>
+                    <p className="text-muted-foreground">+998 97 521 66 86</p>
                   </div>
 
                   <div className="text-center">
                     <div className="bg-gradient-to-r from-purple-500 to-pink-500 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                       <MapPin className="h-8 w-8 text-white" />
                     </div>
-                    <h3 className="font-semibold mb-2">Manzil</h3>
-                    <p className="text-muted-foreground">Toshkent, O'zbekiston</p>
+                    <h3 className="font-semibold mb-2">Address</h3>
+                    <p className="text-muted-foreground">Djizzax, O'zbekiston</p>
                   </div>
                 </div>
               </CardContent>
@@ -338,7 +353,7 @@ export default function TeamPage() {
           <div className="text-center">
             <div className="flex justify-center space-x-6 mb-8">
               <a
-                href="https://t.me/itcreative_uz"
+                href="https://t.me/it_creative_news"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-blue-500 hover:bg-blue-600 p-3 rounded-full transition-all duration-300 hover:scale-110"
@@ -354,7 +369,7 @@ export default function TeamPage() {
                 <Youtube className="h-6 w-6" />
               </a>
               <a
-                href="https://instagram.com/itcreative_uz"
+                href="https://instagram.com/husanbek_coder"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-pink-500 hover:bg-pink-600 p-3 rounded-full transition-all duration-300 hover:scale-110"
@@ -366,16 +381,15 @@ export default function TeamPage() {
             <div className="flex justify-center items-center space-x-2 mb-4">
               <Sparkles className="h-6 w-6 text-yellow-400" />
               <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                IT Ijodkorlari
+                IT Creative
               </span>
             </div>
 
             <p className="text-slate-300 mb-4">
-              Zamonaviy texnologiyalar va kreativ yechimlar orqali raqamli kelajakni yaratamiz
-            </p>
+We create a digital future through modern technologies and creative solutions            </p>
 
             <div className="border-t border-slate-700 pt-8">
-              <p className="text-slate-400">© 2024 IT Ijodkorlari. Barcha huquqlar himoyalangan.</p>
+              <p className="text-slate-400">© 2024 IT Creative. All rights reserved.</p>
             </div>
           </div>
         </div>
