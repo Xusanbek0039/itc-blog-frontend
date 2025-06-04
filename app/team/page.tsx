@@ -70,7 +70,7 @@ export default function TeamPage() {
       name: "Husan Suyunov",
       role: "Lead Developer & Founder",
       bio: "Full-Stack developer with 5+ years of experience. Expert in React, Node.js, and modern technologies.",
-      avatar: "https://ui-avatars.com/api/?name=Husan+Suyunov&background=6366f1&color=fff&size=200",
+      avatar: "https://husanbek-coder.uz/_next/image?url=%2Fassets%2Fme.jpg&w=256&q=75",
       skills: [
           "Python",
           "Django",
