@@ -3,10 +3,12 @@
 import { NextResponse } from "next/server";
 
 export async function GET() {
-  const baseUrl = "https://itc-blog-api.onrender.com";
+  const baseUrl = "https://itc-blog.uz";
 
-  // Maqolalarni API orqali olish (o'zingizga mos endpoint qo'ying)
-  const res = await fetch(`${baseUrl}/api/articles`);
+  const res = await fetch("https://itc-blog-api.onrender.com/api/articles", {
+    cache: "no-store", // har safar yangi ma'lumot olish
+  });
+
   const articles = await res.json();
 
   const urls = articles.map((article: any) => {
