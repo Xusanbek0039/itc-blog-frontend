@@ -28,13 +28,13 @@ interface PortfolioItem {
 const mockWorks: PortfolioItem[] = [
   {
     _id: "mock-work-1",
-    title: "E-commerce Platform",
+    title: "Husanbek Portfolio ",
     description:
-      "Zamonaviy onlayn do'kon platformasi. React, Node.js va MongoDB yordamida yaratilgan. To'liq funksional admin panel, payment integration va real-time notifications mavjud.",
+      "A portfolio website created using a modern 3D model. If you want, you can also watch it, and you can create a similar website for yourself using any UI design.",
     technologies: ["React", "Node.js", "MongoDB", "Express", "Stripe", "Socket.io"],
-    liveUrl: "https://demo-ecommerce.itcreative.uz",
-    githubUrl: "https://github.com/itcreative/ecommerce-platform",
-    imageUrl: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2340&auto=format&fit=crop",
+    liveUrl: "https://husanbek-coder.uz",
+    githubUrl: "https://github.com/xusanbek0039",
+    imageUrl: "https://husanbek-coder.uz/_next/image?url=%2Fassets%2Fprojects-screenshots%2Fportfolio%2Flanding.png&w=384&q=75",
     author: {
       name: "Husan Suyunov",
       _id: "mock-user-1",
@@ -43,13 +43,13 @@ const mockWorks: PortfolioItem[] = [
   },
   {
     _id: "mock-work-2",
-    title: "Task Management System",
+    title: "IT Center CRM API",
     description:
-      "Jamoaviy ish uchun vazifalarni boshqarish tizimi. Kanban board, real-time collaboration va advanced reporting xususiyatlari bilan.",
-    technologies: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Tailwind CSS"],
-    liveUrl: "https://taskmanager.itcreative.uz",
-    githubUrl: "https://github.com/itcreative/task-manager",
-    imageUrl: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?q=80&w=2339&auto=format&fit=crop",
+      "IT Center CRM API is a powerful and scalable backend system for IT training centers, aimed at automating the management of students, courses, payments, teachers and admins. Main Goal: Provide a RESTful API to manage the learning process and administrative work in IT training centers in one place..",
+    technologies: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Tailwind CSS","Python","Django DRF"],
+    liveUrl: "https://itclms.uz",
+    githubUrl: "https://github.com/xusanbek0039",
+    imageUrl: "https://advantiss.com/wp-content/uploads/2020/11/crm-system-with-school-search-api-integration-career-guidance-service-platform_page-0001-scaled.jpg",
     author: {
       name: "Husan Suyunov",
       _id: "mock-user-1",
@@ -58,13 +58,13 @@ const mockWorks: PortfolioItem[] = [
   },
   {
     _id: "mock-work-3",
-    title: "Learning Management System",
+    title: "Goodever online shop",
     description:
-      "Onlayn ta'lim platformasi. Video darslar, testlar, sertifikatlar va progress tracking imkoniyatlari bilan.",
-    technologies: ["Vue.js", "Laravel", "MySQL", "Redis", "AWS S3"],
-    liveUrl: "https://lms.itcreative.uz",
-    githubUrl: "https://github.com/itcreative/lms-platform",
-    imageUrl: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2342&auto=format&fit=crop",
+      "Goodever Online Shop API — Powerful Backend for Modern E-commerce Goodever Online Shop API is a fully RESTful architecture, scalable and secure backend system for online stores. The project is designed for product management, order processing, user authentication and payment monitoring.",
+    technologies: ["Vue.js", "Laravel", "MySQL", "Redis", "AWS S3","Figma UI","cPanel"],
+    liveUrl: "https://goodever.uz",
+    githubUrl: "https://github.com/xusanbek0039",
+    imageUrl: "https://husanbek-coder.uz/_next/image?url=%2Fassets%2Fprojects-screenshots%2Fgoodever%2F1.png&w=384&q=75",
     author: {
       name: "Husan Suyunov",
       _id: "mock-user-1",
@@ -169,25 +169,23 @@ export default function WorksPage() {
             </div>
 
             <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
-              Qilingan Ishlar
-            </h1>
+Work Done            </h1>
 
             <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
-              Bizning jamoa tomonidan yaratilgan loyihalar va ishlanmalar
-            </p>
+Projects and developments created by our team            </p>
 
             <div className="flex justify-center space-x-4">
               <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-lg p-4 shadow-lg">
                 <div className="text-2xl font-bold text-blue-600">{portfolioItems.length}+</div>
-                <div className="text-sm text-muted-foreground">Loyihalar</div>
+                <div className="text-sm text-muted-foreground">Projects</div>
               </div>
               <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-lg p-4 shadow-lg">
                 <div className="text-2xl font-bold text-green-600">100%</div>
-                <div className="text-sm text-muted-foreground">Muvaffaqiyat</div>
+                <div className="text-sm text-muted-foreground">Success</div>
               </div>
               <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-lg p-4 shadow-lg">
                 <div className="text-2xl font-bold text-purple-600">24/7</div>
-                <div className="text-sm text-muted-foreground">Qo'llab-quvvatlash</div>
+                <div className="text-sm text-muted-foreground">Support</div>
               </div>
             </div>
           </div>
@@ -214,16 +212,12 @@ export default function WorksPage() {
           ) : error && !useMockData ? (
             <div className="text-center py-12">
               <AlertTriangle className="h-12 w-12 text-destructive mx-auto mb-4" />
-              <h3 className="text-lg font-semibold mb-2">Xatolik yuz berdi</h3>
+              <h3 className="text-lg font-semibold mb-2">An error occurred.</h3>
               <p className="text-muted-foreground mb-4">{error}</p>
               <div className="space-x-2">
                 <Button onClick={handleRetry}>
                   <RefreshCw className="h-4 w-4 mr-2" />
-                  Qayta urinish
-                </Button>
-                <Button variant="outline" onClick={handleUseMockData}>
-                  Demo loyihalarni ko'rish
-                </Button>
+Retry                </Button>
               </div>
             </div>
           ) : (
@@ -291,15 +285,14 @@ export default function WorksPage() {
                             >
                               <a href={item.liveUrl} target="_blank" rel="noopener noreferrer">
                                 <ExternalLink className="h-3 w-3 mr-1" />
-                                Ko'rish
-                              </a>
+View                              </a>
                             </Button>
                           )}
                           {item.githubUrl && (
                             <Button variant="outline" size="sm" asChild className="flex-1">
                               <a href={item.githubUrl} target="_blank" rel="noopener noreferrer">
                                 <Github className="h-3 w-3 mr-1" />
-                                Kod
+                                Code
                               </a>
                             </Button>
                           )}
@@ -311,13 +304,10 @@ export default function WorksPage() {
               ) : (
                 <div className="text-center py-12">
                   <Code className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-                  <h3 className="text-lg font-semibold mb-2">Hozircha loyihalar yo'q</h3>
+                  <h3 className="text-lg font-semibold mb-2">No projects yet</h3>
                   <p className="text-muted-foreground mb-4">
-                    Tez orada yangi loyihalar qo'shiladi. Bizni kuzatib boring!
-                  </p>
-                  <Button variant="outline" onClick={handleUseMockData}>
-                    Demo loyihalarni ko'rish
-                  </Button>
+New projects will be added soon. Follow us!                  </p>
+
                 </div>
               )}
             </>
@@ -329,11 +319,11 @@ export default function WorksPage() {
       <section className="py-16 bg-gradient-to-r from-blue-600 to-purple-600">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-3xl mx-auto text-white">
-            <h2 className="text-4xl font-bold mb-4">Loyihangiz bormi?</h2>
-            <p className="text-xl mb-8 opacity-90">Biz bilan bog'laning va g'oyangizni hayotga tatbiq eting!</p>
+            <h2 className="text-4xl font-bold mb-4">Do you have a project?</h2>
+            <p className="text-xl mb-8 opacity-90">Contact us and bring your idea to life!</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" variant="secondary" className="bg-white text-blue-600 hover:bg-gray-100">
-                <a href="/contact">Bog'lanish</a>
+                <a href="/contact">Connection</a>
               </Button>
               <Button
                 asChild
@@ -341,7 +331,7 @@ export default function WorksPage() {
                 variant="outline"
                 className="border-white text-white hover:bg-white hover:text-blue-600"
               >
-                <a href="/team">Jamoa bilan tanishish</a>
+                <a href="/team">Meet the team</a>
               </Button>
             </div>
           </div>
